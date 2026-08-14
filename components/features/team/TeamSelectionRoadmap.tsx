@@ -70,11 +70,11 @@ export function TeamSelectionRoadmap() {
   ];
 
   return (
-    <section ref={ref} className="py-20 px-4 sm:px-6 lg:px-8 max-w-content mx-auto overflow-hidden">
+    <section ref={ref} className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-content mx-auto overflow-hidden">
       {/* Header */}
-      <div className="text-center max-w-xl mx-auto mb-16">
-        <p className="text-[10px] uppercase tracking-[0.22em] text-muted font-mono mb-3">How It Works</p>
-        <h2 className="text-3xl sm:text-4xl font-bold font-display text-text-primary tracking-tight">
+      <div className="text-center max-w-xl mx-auto mb-10 sm:mb-16">
+        <p className="text-[10px] uppercase tracking-[0.22em] text-muted font-mono mb-2 sm:mb-3">How It Works</p>
+        <h2 className="text-2xl sm:text-4xl font-bold font-display text-text-primary tracking-tight">
           3 Steps to Secure Your Wing
         </h2>
       </div>
@@ -141,15 +141,16 @@ export function TeamSelectionRoadmap() {
       </div>
 
       {/* Mobile vertical timeline */}
-      <div className="md:hidden relative pl-8">
-        <div className="absolute left-[15px] top-0 bottom-0 w-px bg-border overflow-hidden">
+      <div className="md:hidden relative pl-10">
+        {/* Continuous track line centered on node circles */}
+        <div className="absolute left-[15px] top-4 bottom-4 w-px bg-border overflow-hidden">
           <motion.div
             style={{ height: lineWidth }}
             className="w-full bg-gradient-to-b from-primary via-accent to-emerald-400"
           />
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {STEPS.map((step, idx) => {
             const Icon = step.icon;
             const transform = stepTransforms[idx];
@@ -163,13 +164,21 @@ export function TeamSelectionRoadmap() {
                 }}
                 className="relative"
               >
-                <div className={`absolute -left-8 w-7 h-7 rounded-full bg-bg-card border ${step.border} flex items-center justify-center`}>
-                  <Icon className={`w-3.5 h-3.5 ${step.color}`} />
+                {/* Node icon aligned with track line */}
+                <div className={`absolute -left-10 top-3 w-8 h-8 rounded-full bg-bg-card border ${step.border} flex items-center justify-center shadow-md z-10`}>
+                  <Icon className={`w-4 h-4 ${step.color}`} />
                 </div>
-                <div className={`rounded-2xl bg-gradient-to-br ${step.bg} border ${step.border} p-5`}>
-                  <div className={`text-xs font-mono font-bold ${step.color} mb-2`}>{step.number}</div>
-                  <h3 className="text-base font-bold font-display text-text-primary mb-1.5">{step.title}</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">{step.description}</p>
+
+                {/* Step Content Card */}
+                <div className={`rounded-2xl bg-gradient-to-br ${step.bg} border ${step.border} p-4 sm:p-5`}>
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <h3 className="text-base font-bold font-display text-text-primary">{step.title}</h3>
+                    <span className={`text-xs font-mono font-bold ${step.color}`}>{step.number}</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-relaxed mb-2.5">{step.description}</p>
+                  <span className={`inline-block text-[9px] font-mono ${step.color} bg-bg-surface/60 border ${step.border} px-2.5 py-0.5 rounded-full`}>
+                    {step.detail}
+                  </span>
                 </div>
               </motion.div>
             );

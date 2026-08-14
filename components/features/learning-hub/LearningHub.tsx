@@ -49,13 +49,14 @@ const RESOURCES: Resource[] = [
   },
   {
     icon: Terminal,
-    title: "Project Starter Kits",
+    title: "AWS Builder Center",
     description:
-      "Boilerplates for common AWS patterns — REST APIs with Lambda, static sites on S3 + CloudFront, CI/CD with CodePipeline, and more.",
-    link: "#",
-    linkLabel: "Clone a starter",
+      "Explore curated AWS learning topics, developer tutorials, architectural patterns, and hands-on cloud guides on the official AWS Builder Center.",
+    link: "https://builder.aws.com/learn/topics",
+    linkLabel: "Explore Builder Topics",
     accent: "bg-info/10 text-info",
   },
+  
   {
     icon: BadgeCheck,
     title: "AWS Educate & Student Credits",
@@ -66,13 +67,13 @@ const RESOURCES: Resource[] = [
     accent: "bg-warning/10 text-warning",
   },
   {
-    icon: Layers,
+    icon: Play,
     title: "Community Blog",
     description:
       "Technical write-ups, project deep-dives, and certification journeys written by our members. Learn from real builder experiences.",
     link: "#",
     linkLabel: "Read posts",
-    accent: "bg-secondary/10 text-secondary",
+    accent: "bg-primary/10 text-primary-light",
   },
 ];
 

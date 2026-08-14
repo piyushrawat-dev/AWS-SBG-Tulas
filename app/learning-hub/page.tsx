@@ -4,7 +4,7 @@ import { LearningHub } from "@/components/features/learning-hub/LearningHub";
 export const metadata: Metadata = {
   title: "Learning Hub",
   description:
-    "Resources to level up your cloud skills — AWS certifications, workshop archives, Skill Builder, project starter kits, and more from AWS SBG Tulas.",
+    "Resources to level up your cloud skills — AWS certifications, workshop archives, Skill Builder, AWS Builder Center, and more from AWS SBG Tulas.",
   alternates: {
     canonical: "/learning-hub",
   },

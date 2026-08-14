@@ -110,12 +110,17 @@ export async function POST(request: Request) {
       );
     }
 
+    // Generate date and time (IST)
+    const now = new Date();
+    const istDate = now.toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" }); // YYYY-MM-DD
+    const istTime = now.toLocaleTimeString("en-GB", { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit", hour12: false }); // HH:MM
+
     // Insert application row — only the fields the form actually collects
     const { data, error: insertError } = await supabaseAdmin
       .from("sbg_applications")
       .insert({
         full_name: fullName.trim(),
-        university_email: universityEmail.trim().toLowerCase(),
+        email: universityEmail.trim().toLowerCase(),
         phone_number: normalizedPhone,
         roll_number: rollNumber.trim(),
         course: course.trim(),
@@ -123,8 +128,10 @@ export async function POST(request: Request) {
         year: year.trim(),
         wing: wing.trim(),
         interest_areas: interestAreas,
+        date: istDate,
+        time: istTime,
       })
-      .select("id, created_at")
+      .select("id, date, time")
       .single();
 
     if (insertError) {
@@ -151,7 +158,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(
-      { success: true, id: data.id, submittedAt: data.created_at },
+      { success: true, id: data.id, date: data.date, time: data.time },
       { status: 201 }
     );
   } catch (e) {
