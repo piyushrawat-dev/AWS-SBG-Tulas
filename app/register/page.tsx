@@ -187,7 +187,6 @@ function RegisterPageContent() {
       const fd = new FormData();
       fd.append("fullName", form.fullName.trim());
       fd.append("universityEmail", form.universityEmail.trim());
-      fd.append("personalEmail", form.universityEmail.trim());
       fd.append("phoneNumber", form.phoneNumber.trim());
       fd.append("rollNumber", form.rollNumber.trim());
       fd.append("course", finalCourse);
@@ -195,11 +194,6 @@ function RegisterPageContent() {
       fd.append("year", form.year);
       fd.append("wing", form.wings.join(" + "));
       fd.append("interestAreas", JSON.stringify(form.wings));
-      fd.append("whyJoin", "Direct application via AWS SBG fast portal");
-      fd.append("githubUrl", "");
-      fd.append("linkedinUrl", "");
-      fd.append("usedAws", "Not specified");
-      fd.append("leadershipExperience", "");
 
       const [res] = await Promise.all([
         fetch("/api/register", { method: "POST", body: fd }),
@@ -326,7 +320,7 @@ function RegisterPageContent() {
                 </label>
                 {form.fullName.trim() && (
                   <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-0.5">
-                    ✓ Valid
+                    ✓
                   </span>
                 )}
               </div>
@@ -354,7 +348,7 @@ function RegisterPageContent() {
                   </label>
                   {EMAIL_RE.test(form.universityEmail) && (
                     <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-0.5">
-                      ✓ Valid
+                      ✓
                     </span>
                   )}
                 </div>
@@ -379,7 +373,7 @@ function RegisterPageContent() {
                   </label>
                   {PHONE_RE.test(form.phoneNumber) && (
                     <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-0.5">
-                      ✓ Valid
+                      ✓
                     </span>
                   )}
                 </div>
@@ -407,11 +401,11 @@ function RegisterPageContent() {
             <div id="field-rollNumber" className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <label className="text-[11px] font-mono uppercase tracking-wider text-white/50">
-                  Student Roll / ID Number <span className="text-primary-light">*</span>
+                  Roll No. <span className="text-primary-light">*</span>
                 </label>
                 {form.rollNumber.trim() && (
                   <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-0.5">
-                    ✓ Valid
+                    ✓
                   </span>
                 )}
               </div>

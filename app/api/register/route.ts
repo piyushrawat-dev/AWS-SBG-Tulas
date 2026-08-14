@@ -96,16 +96,11 @@ export async function POST(request: Request) {
     const {
       fullName,
       universityEmail,
-      personalEmail,
       rollNumber,
       course,
       branch,
       year,
       wing,
-      githubUrl,
-      linkedinUrl,
-      whyJoin,
-      leadershipExperience,
     } = body;
 
     if (!supabaseAdmin) {
@@ -115,13 +110,12 @@ export async function POST(request: Request) {
       );
     }
 
-    // Insert application row
+    // Insert application row — only the fields the form actually collects
     const { data, error: insertError } = await supabaseAdmin
       .from("sbg_applications")
       .insert({
         full_name: fullName.trim(),
         university_email: universityEmail.trim().toLowerCase(),
-        personal_email: (personalEmail || universityEmail).trim().toLowerCase(),
         phone_number: normalizedPhone,
         roll_number: rollNumber.trim(),
         course: course.trim(),
@@ -129,12 +123,6 @@ export async function POST(request: Request) {
         year: year.trim(),
         wing: wing.trim(),
         interest_areas: interestAreas,
-        github_url: githubUrl?.trim() || null,
-        linkedin_url: linkedinUrl?.trim() || null,
-        why_join: whyJoin?.trim() || "Applied via AWS SBG Builder Registration Portal",
-        leadership_experience: leadershipExperience?.trim() || null,
-        used_aws: false,
-        aws_services: [],
       })
       .select("id, created_at")
       .single();
