@@ -45,7 +45,7 @@ const STEPS = [
 
 export function TeamSelectionRoadmap() {
   const ref = React.useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.75", "center center"] });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.75", "center center"], layoutEffect: false });
   const lineWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   // Step 1: appears as line starts at Step 01
@@ -70,7 +70,7 @@ export function TeamSelectionRoadmap() {
   ];
 
   return (
-    <section ref={ref} className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-content mx-auto overflow-hidden">
+    <section ref={ref} style={{ position: "relative" }} className="relative py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-content mx-auto overflow-hidden">
       {/* Header */}
       <div className="text-center max-w-xl mx-auto mb-10 sm:mb-16">
         <p className="text-[10px] uppercase tracking-[0.22em] text-muted font-mono mb-2 sm:mb-3">How It Works</p>

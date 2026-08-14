@@ -86,6 +86,7 @@ export function TeamLeadership() {
                         src={leader.avatar}
                         alt={leader.name}
                         fill
+                        sizes="(max-width: 640px) 96px, 128px"
                         className={isFaculty ? "object-cover object-center scale-[1.38]" : "object-cover object-center"}
                       />
                     </div>

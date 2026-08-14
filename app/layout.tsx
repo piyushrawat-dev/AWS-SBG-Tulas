@@ -151,13 +151,13 @@ export default function RootLayout({
         <WebSiteJsonLd />
       </head>
       <body
-        className={`${GeistPixelSquare.variable} ${GeistPixelGrid.variable} ${GeistPixelCircle.variable} ${GeistPixelTriangle.variable} ${GeistPixelLine.variable}`}
+        className={`relative min-h-screen ${GeistPixelSquare.variable} ${GeistPixelGrid.variable} ${GeistPixelCircle.variable} ${GeistPixelTriangle.variable} ${GeistPixelLine.variable}`}
       >
         <Toaster richColors theme="dark" position="top-right" />
         <MotionConfigWrapper>
           <SmoothScroll>
             <Navbar />
-            <main>{children}</main>
+            <main className="relative">{children}</main>
             <Footer />
           </SmoothScroll>
         </MotionConfigWrapper>

@@ -171,7 +171,7 @@ export function Footer() {
               className="flex items-center gap-3 font-display text-lg font-semibold tracking-tight text-text-primary transition-opacity hover:opacity-80 w-fit"
             >
               <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-white/[0.05] p-1.5 ring-1 ring-white/10">
-                <Image src="/logos/SBG_logo.png" alt="AWS SBG Logo" fill className="object-contain p-1" />
+                <Image src="/logos/SBG_logo.png" alt="AWS SBG Logo" fill sizes="40px" className="object-contain p-1" />
               </div>
               AWS Student Builder Group
             </Link>

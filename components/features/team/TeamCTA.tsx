@@ -51,12 +51,13 @@ export function TeamCTA() {
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center center"],
+    layoutEffect: false,
   });
   const y = useTransform(scrollYProgress, [0, 1], [40, 0]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
-    <section ref={ref} className="py-14 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-content mx-auto relative">
+    <section ref={ref} style={{ position: "relative" }} className="py-14 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-content mx-auto relative">
       <motion.div
         style={{ y, opacity }}
         className="relative rounded-3xl overflow-hidden border border-primary/30 bg-gradient-to-br from-primary/15 via-bg-card to-bg-surface backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(124,58,237,0.35)]"

@@ -76,7 +76,8 @@ export function ScrollReveal({
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
+    layoutEffect: false
   });
 
   // Transform rotation based on scroll
@@ -133,9 +134,9 @@ export function ScrollReveal({
   return (
     <motion.div
       ref={containerRef}
-      style={{ rotate: rotation }}
+      style={{ rotate: rotation, position: "relative" }}
       className={cn(
-        "my-5 transform-gpu",
+        "relative my-5 transform-gpu",
         containerClassName
       )}
     >

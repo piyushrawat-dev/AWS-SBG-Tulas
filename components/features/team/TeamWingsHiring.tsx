@@ -130,11 +130,11 @@ function WingRow({ wing, index }: { wing: typeof WINGS[0]; index: number }) {
 /* ─── Section ─────────────────────────────────────────── */
 export function TeamWingsHiring() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"], layoutEffect: false });
   const headerY = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   return (
-    <section ref={sectionRef} id="wings" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-content mx-auto">
+    <section ref={sectionRef} id="wings" style={{ position: "relative" }} className="relative py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-content mx-auto">
 
       {/* ── Section header ──────────────────────────── */}
       <motion.div style={{ y: headerY }} className="mb-10 sm:mb-16">
