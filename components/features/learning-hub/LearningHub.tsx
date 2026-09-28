@@ -49,13 +49,14 @@ const RESOURCES: Resource[] = [
   },
   {
     icon: Terminal,
-    title: "Project Starter Kits",
+    title: "AWS Builder Center",
     description:
-      "Boilerplates for common AWS patterns — REST APIs with Lambda, static sites on S3 + CloudFront, CI/CD with CodePipeline, and more.",
-    link: "#",
-    linkLabel: "Clone a starter",
+      "Explore curated AWS learning topics, developer tutorials, architectural patterns, and hands-on cloud guides on the official AWS Builder Center.",
+    link: "https://builder.aws.com/learn/topics",
+    linkLabel: "Explore Builder Topics",
     accent: "bg-info/10 text-info",
   },
+  
   {
     icon: BadgeCheck,
     title: "AWS Educate & Student Credits",
@@ -66,13 +67,13 @@ const RESOURCES: Resource[] = [
     accent: "bg-warning/10 text-warning",
   },
   {
-    icon: Layers,
+    icon: Play,
     title: "Community Blog",
     description:
       "Technical write-ups, project deep-dives, and certification journeys written by our members. Learn from real builder experiences.",
     link: "#",
     linkLabel: "Read posts",
-    accent: "bg-secondary/10 text-secondary",
+    accent: "bg-primary/10 text-primary-light",
   },
 ];
 
@@ -151,7 +152,7 @@ export function LearningHub() {
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
                 variants={itemVariants}
-                className="group flex flex-col gap-4 rounded-xl border border-border bg-bg p-6 transition-colors transition-shadow duration-300 hover:border-primary-light/30 hover:bg-white/[0.02]"
+                className="group flex flex-col gap-4 rounded-xl border border-border bg-bg p-6 transition-all duration-300 hover:border-primary-light/30 hover:bg-white/[0.02]"
               >
                 <div className="flex items-center justify-between">
                   <span
@@ -162,7 +163,7 @@ export function LearningHub() {
                   <ExternalLink
                     size={14}
                     animateOnHover
-                    className="text-muted opacity-0 transition-opacity transition-colors duration-200 group-hover:opacity-100 group-hover:text-primary-light"
+                    className="text-muted opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:text-primary-light"
                   />
                 </div>
 

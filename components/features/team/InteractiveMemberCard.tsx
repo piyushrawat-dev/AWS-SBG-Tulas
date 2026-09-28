@@ -68,6 +68,7 @@ export function InteractiveMemberCard({ member }: InteractiveMemberCardProps) {
                 src={member.avatar || "/logos/SBG_logo.png"}
                 alt={member.name}
                 fill
+                sizes="112px"
                 className="object-cover transition-transform duration-500 group-hover/avatar:scale-110"
               />
             </div>

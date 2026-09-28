@@ -19,7 +19,7 @@ export function ScrollRevealSection() {
           staggerDelay={0.05}
           duration={0.6}
           threshold={0.2}
-          containerClassName="my-0 transform-gpu"
+          containerClassName="relative my-0 transform-gpu"
         >
           Learn cloud, build projects, and grow together
         </ScrollReveal>
@@ -33,7 +33,7 @@ export function ScrollRevealSection() {
           staggerDelay={0.05}
           duration={0.6}
           threshold={0.2}
-          containerClassName="my-0 transform-gpu opacity-90"
+          containerClassName="relative my-0 transform-gpu opacity-90"
         >
           — powered by AWS
         </ScrollReveal>

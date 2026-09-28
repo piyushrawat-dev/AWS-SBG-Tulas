@@ -256,6 +256,7 @@ export function TeamNetworkConstellation() {
                           src={selectedNode.leadAvatar}
                           alt={selectedNode.leadName}
                           fill
+                          sizes="(max-width: 640px) 112px, 128px"
                           className="object-cover object-center"
                         />
                       </div>

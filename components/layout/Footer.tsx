@@ -26,6 +26,7 @@ const FOOTER_LINKS = [
     heading: "Resources",
     links: [
       { label: "Learning Hub", href: "/learning-hub" },
+      { label: "AWS Builder Center", href: "https://builder.aws.com/learn/topics" },
       { label: "AWS Console", href: "https://console.aws.amazon.com/" },
       { label: "AWS Skill Builder", href: "https://skillbuilder.aws" },
       { label: "AWS Educate", href: "https://aws.amazon.com/education/awseducate/" },
@@ -170,7 +171,7 @@ export function Footer() {
               className="flex items-center gap-3 font-display text-lg font-semibold tracking-tight text-text-primary transition-opacity hover:opacity-80 w-fit"
             >
               <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-white/[0.05] p-1.5 ring-1 ring-white/10">
-                <Image src="/logos/SBG_logo.png" alt="AWS SBG Logo" fill className="object-contain p-1" />
+                <Image src="/logos/SBG_logo.png" alt="AWS SBG Logo" fill sizes="40px" className="object-contain p-1" />
               </div>
               AWS Student Builder Group
             </Link>
